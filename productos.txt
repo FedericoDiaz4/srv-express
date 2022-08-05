@@ -1,0 +1,1 @@
+[{"nombre":"Escuadra","precio":123.45,"thumbnail":"foto1","id":1},{"nombre":"Calculadora","precio":234.56,"thumbnail":"foto2","id":2},{"nombre":"Producto 3","precio":300,"thumbnail":"foto3","id":3},{"nombre":"Producto 4","precio":400,"thumbnail":"foto4","id":4}]
