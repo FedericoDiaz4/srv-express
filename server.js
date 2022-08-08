@@ -7,12 +7,12 @@ const archivo = new Contenedor('./productos.txt');
 
 app.get('/productos', async (req, res) => {
     const productos = await archivo.getAll();
-    res.send(productos);
+    return res.send(productos);
 });
 
 app.get('/productoRandom', async (req,res) => {
     const prodRandom = await archivo.getById(Math.floor((Math.random() * 4) + 1));
-    res.send(prodRandom);
+    return res.send(prodRandom);
 });
 
 
