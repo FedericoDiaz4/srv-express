@@ -6,13 +6,23 @@ const app = express();
 const archivo = new Contenedor('./productos.txt');
 
 app.get('/productos', async (req, res) => {
-    const productos = await archivo.getAll();
-    return res.send(productos);
+    try {
+        const productos = await archivo.getAll();
+        return res.send(productos);   
+    } catch (error) {
+        console.log(error);
+        return res.send({error:"No se encuentran productos"});
+    }
 });
 
 app.get('/productoRandom', async (req,res) => {
-    const prodRandom = await archivo.getById(Math.floor((Math.random() * 4) + 1));
-    return res.send(prodRandom);
+    try {
+        const prodRandom = await archivo.getById(Math.floor((Math.random() * 4) + 1));
+        return res.send(prodRandom);   
+    } catch (error) {
+        console.log(error);
+        return res.send({error:"No se encuentra el producto"});
+    }
 });
 
 
